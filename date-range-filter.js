@@ -358,7 +358,7 @@ const run = async (
         }
         ${!def_range_obj ? `autoUpdateInput: false,` : ""}
         locale: {
-          format: 'dd.mm.yyyy',
+          format: 'd.m.Y',
           ${!ranges?.length ? `cancelLabel: "${extra.req.__("Clear")}"` : ""}
         },
         ${set_initial}
@@ -371,7 +371,7 @@ const run = async (
             ? `$('#daterangefilter${name}').on('apply.daterangepicker', function(ev, picker) {
           console.log("pick")
 
-          $(this).val(picker.startDate.format('dd.mm.yyyy') + ' - ' + picker.endDate.format('dd.mm.yyyy'));
+          $(this).val(picker.startDate.format('d.m.Y') + ' - ' + picker.endDate.format('d.m.Y'));
         });
     
         $('#daterangefilter${name}').on('cancel.daterangepicker', function(ev, picker) {
